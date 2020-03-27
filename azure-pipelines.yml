@@ -58,7 +58,7 @@ steps:
       workingDirectory: ''
       gradleWrapperFile: 'gradlew'
       tasks: 'publishMac'
-    condition: and(eq(variables['Agent.OS'], 'Darwin'), succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    condition: and(eq(variables['Agent.OS'], 'Darwin'), succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/basher/1.4')))
     displayName: 'Publish Mac Artifacts'
     env:
       SONATYPE_USERNAME: "$(SONATYPE_USERNAME)"
@@ -72,7 +72,7 @@ steps:
       workingDirectory: ''
       gradleWrapperFile: 'gradlew'
       tasks: 'publishLinux'
-    condition: and(eq(variables['Agent.OS'], 'Linux'), succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    condition: and(eq(variables['Agent.OS'], 'Linux'), succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/basher/1.4')))
     displayName: 'Publish Linux Artifacts'
     env:
       SONATYPE_USERNAME: "$(SONATYPE_USERNAME)"
@@ -86,7 +86,7 @@ steps:
       workingDirectory: ''
       gradleWrapperFile: 'gradlew'
       tasks: 'publishWindows'
-    condition: and(eq(variables['Agent.OS'], 'Windows_NT'), succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    condition: and(eq(variables['Agent.OS'], 'Windows_NT'), succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/basher/1.4')))
     displayName: 'Publish Windows Artifacts'
     env:
       SONATYPE_USERNAME: "$(SONATYPE_USERNAME)"
