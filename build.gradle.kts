@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinNativeLink
 import org.jetbrains.kotlin.konan.target.HostManager
 
 plugins {
-    kotlin("multiplatform") version "1.3.70"
+    kotlin("multiplatform") version "1.4-M1"
     id("org.jetbrains.dokka") version "0.9.18"
     id("maven-publish")
     id("signing")
@@ -10,6 +10,7 @@ plugins {
 
 repositories {
     jcenter()
+    maven { url = uri("https://dl.bintray.com/kotlin/kotlin-eap") }
 }
 
 tasks.dokka {

@@ -2,6 +2,7 @@ trigger:
   branches:
     include:
       - 'master'
+      - 'basher/1.4'
 
 pr:
   branches:
