@@ -1,7 +1,13 @@
-buildscript {
-    ext."signing.keyId" = System.getenv("SIGNING_KEYID")
-    ext."signing.password" = System.getenv("SIGNING_PASSWORD")
-    ext."signing.secretKeyRingFile" = System.getenv("SIGNING_KEYRING")
+def isReleaseBuild() {
+  return VERSION.contains('SNAPSHOT') == false
+}
+
+if (isReleaseBuild()) {
+    buildscript {
+        ext."signing.keyId" = System.getenv("SIGNING_KEYID")
+        ext."signing.password" = System.getenv("SIGNING_PASSWORD")
+        ext."signing.secretKeyRingFile" = System.getenv("SIGNING_KEYRING")
+    }
 }
 
 group GROUP
@@ -64,10 +70,6 @@ dokka {
       platforms = ['native']
     }
   }
-}
-
-def isReleaseBuild() {
-  return VERSION.contains('SNAPSHOT') == false
 }
 
 def getReleaseRepositoryUrl() {
