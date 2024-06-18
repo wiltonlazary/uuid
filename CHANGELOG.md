@@ -5,6 +5,48 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.8.4] - 2024-03-19
+### Changed
+- Fix Kotlin Metadata (#157)
+
+## [0.8.3] - 2024-03-16
+### Changed
+- Bump kotlin to 1.9.23 (#154)
+- Add wasmWasi support (#154)
+
+## [0.8.2] - 2023-11-10
+### Changed
+- Bump kotlin to 1.9.20
+- Rename "wasm" target to "wasmJs" (required by kotlin 1.9.20)
+
+## [0.8.1] - 2023-08-25
+### Changed
+- Set apiVersion and languageVersion on the JVM for better compatibility (#147)
+
+## [0.8.0] - 2023-07-22
+### Changed
+- Bump Kotlin to 1.9.0 and add wasm target (#140)
+- Add kotlin-js-store to source control (#141)
+- Do not try to sign if no signing key is configured (#141)
+- Bump Gradle and Dokka (#143)
+- Compile for Java8 by default (#144)
+- Removed deprecated K/N targets (#145)
+
+## [0.7.1] - 2023-06-01
+### Changed
+- Add support for watchosDeviceArm64 (#137)
+- Upgrade Kotlin to 1.8.21 (#139)
+
+## [0.7.0] - 2023-02-25
+### Changed
+- Add support for linuxArm64 (#134)
+- Upgrade Kotlin to 1.8.10 (#135)
+
+## [0.6.0] - 2022-11-08
+### Changed
+- Rework source sets to form a rich hierarchy (#130)
+- Upgrade to Kotlin 1.7.20 (#131)
+
 ## [0.5.0] - 2022-07-13
 ### Changed
 - Upgrade to Kotlin 1.7.10 (#126)

@@ -1,3 +1,4 @@
+
 package com.benasher44.uuid
 
 import kotlinx.cinterop.ByteVar
@@ -9,7 +10,6 @@ import kotlinx.cinterop.usePinned
 import platform.Foundation.NSData
 import platform.Foundation.NSUUID
 import platform.Foundation.dataWithContentsOfFile
-import kotlin.native.concurrent.isFrozen
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -33,11 +33,6 @@ class CocoaUuidTest {
             nativeUuid.getUUIDBytes(it.addressOf(0).reinterpret())
         }
         assertTrue(uuidL.bytes.contentEquals(nativeBytes))
-    }
-
-    @Test
-    fun `UUID is frozen after initialization`() {
-        assertTrue(uuid4().isFrozen)
     }
 
     @Test
